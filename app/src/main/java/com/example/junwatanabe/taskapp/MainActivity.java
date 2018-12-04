@@ -143,12 +143,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         String text1 = meditText.getText().toString();
-        String category = mCategoryEdit.getText().toString();
-        //もしeditTextの文字列がcategoryの文字列と一致したならば
-        if (text1.equals.category) {
-            //一致したカテゴリーを含むタスクを表示
-        } else {
-        }
+
+        RealmResults<Task> taskRealmResults = mRealm.where(Task.class).equalTo("category", text1).findAll();
+        mTaskAdapter.setTaskList(mRealm.copyFromRealm(taskRealmResults));
+        // TaskのListView用のアダプタに渡す
+        mListView.setAdapter(mTaskAdapter);
+        // 表示を更新するために、アダプターにデータが変更されたことを知らせる
+        mTaskAdapter.notifyDataSetChanged();
     }
     @Override
     protected void onDestroy() {
