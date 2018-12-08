@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Realmの設定
         mRealm = Realm.getDefaultInstance();
         mRealm.addChangeListener(mRealmListener);
+        Realm.getDefaultInstance().addChangeListener(mRealmListener);
+
 
         // ListViewの設定
         mTaskAdapter = new TaskAdapter(MainActivity.this);

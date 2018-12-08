@@ -20,7 +20,17 @@
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
+
     </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/plus"
+        app:backgroundTint="@color/colorPrimary"/>
 
     <include layout="@layout/content_input"/>
 

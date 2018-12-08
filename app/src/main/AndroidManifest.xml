@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.junwatanabe.taskapp">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".TaskApp"
@@ -27,13 +27,26 @@
             android:label="タスク"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.junwatanabe.taskapp.MainActivity"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.junwatanabe.taskapp.MainActivity" />
         </activity>
 
-        <receiver android:name=".TaskAlarmReceiver"/>
+        <receiver android:name=".TaskAlarmReceiver" />
 
+        <activity
+            android:name=".InputCategoryActivity"
+            android:label="カテゴリ"
+            android:parentActivityName=".InputActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".com.example.junwatanabe.taskapp.InputActivity"/>
+
+
+
+
+        </activity>
     </application>
 
 </manifest>
